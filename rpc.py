@@ -44,7 +44,7 @@ class Move(object):
             point.
         """
         if isinstance(other, Move):
-            return self.move == other.move  # Just compare the stirings
+            return self.move == other.move  # Just compare the strings
         else:
             return NotImplemented  # Don't allow comparison with anything that's not a Move object
 
@@ -79,7 +79,7 @@ class Move(object):
             if self.move == 'scissors':
                 return True if other.move == 'paper' else False
             elif self.move == 'paper':
-                return True if other.move == 'rick' else False
+                return True if other.move == 'rock' else False
             elif self.move == 'rock':
                 return True if other.move == 'scissors' else False
         else:
