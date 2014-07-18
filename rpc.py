@@ -5,9 +5,6 @@ from getpass import getpass as gp
 
 from functools import total_ordering
 
-# Introduce the game to the players
-print 'This is a text based game of Rock, Paper, Scissors. Enjoy!'
-
 prompt_msg = '{}, what is your move? '
 invalid_msg = '{}, that is not a valid move. Please try again.'
 win_msg = '{} wins!'
@@ -97,6 +94,8 @@ class Move(object):
 
 # Run the main sequence only if this file is opened as the main file, not if it's imported by another file
 if __name__ == '__main__':
+    # Introduce the game to the players
+    print 'This is a text based game of Rock, Paper, Scissors. Enjoy!'
 
     # Find out players' names
     name1 = raw_input("What is one of the players' names? ")
