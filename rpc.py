@@ -19,7 +19,7 @@ yes_answers = {'yes', 'ye', 'y'}
 def get_move_for_player(name):
     move = gp(prompt_msg.format(name)).lower()
     while not move in valid_moves:
-        print invalid_msg.format(name)
+        print(invalid_msg.format(name))
         move = gp(prompt_msg.format(name)).strip().lower()  # Remove whitespace and lower the case
     return Move(move)  # Create a move class
 
@@ -95,11 +95,11 @@ class Move(object):
 # Run the main sequence only if this file is opened as the main file, not if it's imported by another file
 if __name__ == '__main__':
     # Introduce the game to the players
-    print 'This is a text based game of Rock, Paper, Scissors. Enjoy!'
+    print('This is a text based game of Rock, Paper, Scissors. Enjoy!')
 
     # Find out players' names
-    name1 = raw_input("What is one of the players' names? ")
-    name2 = raw_input("What is the other player's name? ")
+    name1 = input("What is one of the players' names? ")
+    name2 = input("What is the other player's name? ")
 
     play_again = True  # Always play the first time
     while play_again:
@@ -108,15 +108,15 @@ if __name__ == '__main__':
 
         # Determine the result and print it
         if move1 == move2:
-            print '{} and {} have tied'.format(name1, name2)
+            print('{} and {} have tied'.format(name1, name2))
         else:
-            print win_msg.format(name1 if move1 > move2 else name2)
+            print(win_msg.format(name1 if move1 > move2 else name2))
 
         # Print players moves so they can see that the outcome was correctly decided
-        print "{}'s move was {} and {}'s move was {}.".format(name1, move1, name2, move2)
+        print("{}'s move was {} and {}'s move was {}.".format(name1, move1, name2, move2))
 
         # Give the players the option to play again
-        answer = raw_input('''Do you want to play again? Answer, yes or no (any other response will \
+        answer = input('''Do you want to play again? Answer, yes or no (any other response will \
     end the game by default).''').lower().strip()
         # Multi-line stings need to ignore usual indentation or it will become included. It kinda sucks.
 
@@ -129,7 +129,7 @@ if __name__ == '__main__':
 
     ##    #x = 'no'
     ##    while x == 'no':
-    ##         x = raw_input('\n' + 'Are you sure? Answer yes or no.)
-    ##        answer = raw_input('\n' + 'Do you want to play again? Answer, yes or no (any other response will end the game).').lower()
+    ##         x = input('\n' + 'Are you sure? Answer yes or no.)
+    ##        answer = input('\n' + 'Do you want to play again? Answer, yes or no (any other response will end the game).').lower()
     ##
     ##
